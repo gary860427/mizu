@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
+/* utf8一定要在行數1 */
+/* import 一定要在第二行 */
+
+/* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
+
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-b-60: rgba(0, 0, 0, 0.6);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加padding */
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    color: #444;
+    display: block;
+    /* 預設inline行內元素改為block */
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    display: flex;
+    height: 100vh;
+}
+
+/* 左邊_影片區塊 */
+.leftVideo {
+    flex: 1;
+    position: relative;
+}
+
+.leftVideo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* 右邊_圖片輪播區塊 */
+.rightPics {
+    flex: 1;
+    position: relative;
+}
+
+.rightPics img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.rightPics img.active {
+    opacity: 1;
+}
+
+/* 中間Logo樣式 */
+.centerLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* 確保Logo在最上層 */
+}
+
+.centerLogo img {
+    width: 150px; /* 你可以根據需求調整Logo大小 */
+    height: auto;
+}
+
+/* 確保影片和圖片不會蓋住Logo */
+.leftVideo video, .rightPics img {
+    z-index: 1;
+}
