@@ -40,6 +40,7 @@ body {
         "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     font-size: 100%;
     line-height: 1.5;
+    background-color: #F3ECE4;
 }
 
 /* 重置標題 */
@@ -80,7 +81,17 @@ section {
     height: 100vh;
 }
 
-/* 左邊_影片區塊 */
+/* 第一區 */
+/* 使整個 section 佔滿螢幕寬度與高度 */
+.indexFirst {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+/* 左側影片區域，佔50%寬度，高度自動調整 */
 .leftVideo {
     flex: 1;
     position: relative;
@@ -89,47 +100,115 @@ section {
 .leftVideo video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: 1;
+    object-fit: cover; /* 影片依容器調整比例 */
 }
 
-/* 右邊_圖片輪播區塊 */
+/* 右側圖片輪播區域，佔50%寬度，高度自動調整 */
 .rightPics {
     flex: 1;
     position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 .rightPics img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 1;
+    object-fit: cover; /* 保持圖片比例 */
+    display: none; /* 初始狀態下，所有圖片隱藏 */
 }
+
 
 .rightPics img.active {
-    opacity: 1;
+    display: block; /* 當前圖片顯示 */
 }
 
-/* 中間Logo樣式 */
+/* LOGO 位於中央，層級在影片和圖片上方 */
 .centerLogo {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10; /* 確保Logo在最上層 */
+    z-index: 10; /* 確保 LOGO 在最上層 */
 }
 
 .centerLogo img {
-    width: 150px; /* 你可以根據需求調整Logo大小 */
+    width: 250px; /* 可根據需求調整LOGO尺寸 */
     height: auto;
 }
 
-/* 確保影片和圖片不會蓋住Logo */
-.leftVideo video, .rightPics img {
-    z-index: 1;
+/* 第二區 - NEWS 區域 */
+.newsSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #f8f4eb; /* 預設背景顏色 */
 }
+
+/* 左側 NEWS 標題 */
+.newsTitle {
+    position: relative;
+}
+
+.newsTitle h2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #000; /* 黑色字體 */
+    position: relative;
+    z-index: 2; /* 保證標題在裝飾條上方 */
+}
+
+/* 裝飾條 */
+.titleDecoration {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: #6b27b0; /* 底部的紫色條 */
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 10px;
+    height: 20px; /* 控制裝飾條的高度 */
+}
+
+.newsTitle h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%; /* 綠色條比紫色條短 */
+    height: 20px;
+    background-color: #4CAF50; /* 綠色裝飾條 */
+    border-radius: 10px;
+    z-index: 0; /* 保證在紫色條上方 */
+}
+
+/* 右側新聞列表 */
+.newsList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.newsItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 日期樣式 */
+.newsDate {
+    font-size: 16px;
+    color: #000; /* 黑色字體 */
+}
+
+/* 內容文字樣式 */
+.newsContent {
+    font-size: 20px;
+    color: #000; /* 黑色字體 */
+    max-width: 500px; /* 控制內容寬度 */
+    text-align: left; /* 左對齊 */
+}
+

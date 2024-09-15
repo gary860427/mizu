@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOLI_MIZU</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./Css/style.css">
 </head>
 
 <body>
@@ -18,34 +18,57 @@
         <!-- 左邊_影片播放 -->
         <div class="leftVideo">
             <video autoplay muted loop>
-                <source src="./img/video/banner-video.mp4" type="video">
+                <source src="./img/video/banner-video.mp4" type="video/mp4">
             </video>
         </div>
 
         <!-- 右邊_圖片輪播 -->
         <div class="rightPics" id="first_pics">
-            <img src="./img/" alt="圖片1" class="active">
-            <img src="image2.jpg" alt="圖片2">
-            <img src="image3.jpg" alt="圖片3">
-            <img src="image3.jpg" alt="圖片4">
-            <img src="image3.jpg" alt="圖片5">
+            <img src="./img/index-pic/banner-1.jpg" alt="圖片1" class="active">
+            <img src="./img/index-pic/banner-2.jpg" alt="圖片2">
+            <img src="./img/index-pic/banner-3.jpg" alt="圖片3">
+            <img src="./img/index-pic/banner-4.jpg" alt="圖片4">
         </div>
 
         <!-- 中間LOGO -->
         <div class="centerLogo">
-            <img src="./Holi_logoW 1.png" alt="Logo">
+            <img src="./Holi_logoW.png" alt="Logo">
         </div>
     </section>
 
     <!-- 第二區_最新消息 -->
-    <section></section>
+    <!-- 第二區 - NEWS 區域 -->
+    <section class="newsSection">
+        <!-- 左側標題 -->
+        <div class="newsTitle">
+            <h2>NEWS</h2>
+            <div class="titleDecoration"></div>
+        </div>
+
+        <!-- 右側新聞列表 -->
+        <div class="newsList">
+            <div class="newsItem">
+                <span class="newsDate">2024/07/07</span>
+                <span class="newsContent">新品上架!秋冬最新新品入庫</span>
+            </div>
+            <div class="newsItem">
+                <span class="newsDate">2024/02/04</span>
+                <span class="newsContent">最新活動!XX市集出攤啦</span>
+            </div>
+            <div class="newsItem">
+                <span class="newsDate">2024/01/01</span>
+                <span class="newsContent">日本代購!期間限定日本好物</span>
+            </div>
+        </div>
+    </section>
+
     <!-- 第三區_還沒想好 -->
     <section></section>
     <!-- 第四區_商品預覽 -->
     <section></section>
     <!-- 頁尾區 -->
     <footer></footer>
-    <script src="script.js"></script>
+    <script src="./Js/script.js"></script>
 </body>
 
 </html>
