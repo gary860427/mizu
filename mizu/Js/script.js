@@ -1,3 +1,13 @@
+// 漢堡按鈕
+//---漢堡按鈕---
+$(document).ready(function () {
+    $('.hamburger').click(function () {
+        $(this).toggleClass('is-active');
+        $('.navigation').toggleClass('show');
+    });
+});
+
+
 // 第一區圖片切換
 let currentIndex = 0;
 const images = document.querySelectorAll('.rightPics img');
@@ -39,9 +49,6 @@ $(document).ready(function () {
 });
 
 // 按鈕滾動到上層
-$(document).ready(function() {
-    $('.scroll-to-top').click(function(event) {
-        event.preventDefault();  // 防止默認行為
-        $('html, body').animate({ scrollTop: $('#first').offset().top }, 1000, 'linear');  // 平滑滾動，1秒內到達目標，均速滾動
-    });
+$('#first').click(function () {
+    $('html, body').animate({ scrollTop:0},1000);  // 平滑滾動，1秒內到達目標，均速滾動
 });

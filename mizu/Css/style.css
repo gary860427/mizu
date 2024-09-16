@@ -87,6 +87,118 @@ section {
     height: 100vh;
 }
 
+/* 漢堡按鈕 */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 15;
+    padding: 10px;
+}
+
+/* 漢堡按鈕  */
+.hamburger {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 20; /* 確保按鈕在菜單上方，防止被隱藏 */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px auto;
+    transition: 0.35s;
+}
+
+/* 三 變換為 X */
+.hamburger.is-active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(11px);
+}
+
+.hamburger.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-11px);
+}
+
+.navigation {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute; /* 絕對定位 */
+    top: 0;
+    left: -70%;
+    transform: translateX(-50%); /* 使菜單水平居中 */
+    width: 60%;
+    height: 45vh; /* 占據整個視窗 */
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    z-index: 10; /* 確保菜單層級低於漢堡按鈕但高於內容 */
+    justify-content: center;
+}
+
+.navigation.show {
+    width: 150px;
+    display: flex;
+    animation: 0.35s ease 0s 1 normal both running show;
+    border-radius: 20px 0 20px 20px;
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+        display: flex;
+        /*動態顯示*/
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+        /*動態消失*/
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-align: center; /* 文字居中 */
+}
+
+.menu a {
+    color: white;
+    margin: 20px;
+}
+
+.icon {
+    display: flex;
+    order: 1;
+    padding: 15px;
+}
+
+.icon a {
+    width: 35px;
+    margin: 0 5px;
+}
+
+
+
 /* 第一區 */
 /* 使整個 section 佔滿螢幕寬度與高度 */
 .indexFirst {
@@ -258,7 +370,8 @@ section {
 }
 
 .item-title h2 {
-    font-size: 48px;;
+    font-size: 48px;
+    ;
     color: #585858;
     position: relative;
     z-index: 10;
@@ -267,12 +380,13 @@ section {
 .item-title .titleDecoration {
     position: absolute;
     left: 5%;
-    top: 55%;
+    top: 34%;
 }
 
 .item-title p {
     font-size: 1.2em;
     color: #585858;
+    margin-top: 19px;
 }
 
 .carousel {
@@ -321,14 +435,18 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1; /* 將 about 區域設為較低的層級 */
+    z-index: 1;
+    /* 將 about 區域設為較低的層級 */
 }
 
 /* 文字區域 */
 .text-container {
-    background-color: rgba(255, 255, 255, 0.6); /* 半透明背景，凸顯文字 */
-    padding: 15px 80px; /* 內邊距，讓文字與邊緣有間距 */
-    z-index: 2; /* 確保文字顯示在背景之上 */
+    background-color: rgba(255, 255, 255, 0.6);
+    /* 半透明背景，凸顯文字 */
+    padding: 15px 80px;
+    /* 內邊距，讓文字與邊緣有間距 */
+    z-index: 2;
+    /* 確保文字顯示在背景之上 */
     text-align: center;
 }
 
@@ -343,7 +461,7 @@ section {
 /* footer */
 /* Footer 部分 */
 footer {
-    padding:0 20px;
+    padding: 0 20px;
     position: relative;
     text-align: center;
 }
@@ -368,7 +486,8 @@ footer {
 
 /* Scroll to Top 按鈕樣式 */
 .scroll-to-top {
-    margin-bottom: 10px; /* 與 copyright 之間的距離 */
+    margin-bottom: 10px;
+    /* 與 copyright 之間的距離 */
     display: block;
     width: 40px;
     height: 40px;
@@ -376,13 +495,16 @@ footer {
 }
 
 .scroll-to-top img {
-    width: 100%; /* 圖片寬度全占 */
-    height: auto; /* 高度自適應 */
+    width: 100%;
+    /* 圖片寬度全占 */
+    height: auto;
+    /* 高度自適應 */
 }
 
 /* 調整按鈕懸停效果 */
 .scroll-to-top:hover img {
-    opacity: 0.8; /* 懸停時透明度變化 */
+    opacity: 0.8;
+    /* 懸停時透明度變化 */
 }
 
 /* Copyright 樣式 */
@@ -390,4 +512,3 @@ footer {
     font-size: 14px;
     color: #585858;
 }
-
