@@ -12,9 +12,6 @@
     --lightgrey: rgb(88, 88, 88);
     --white: #ffffff;
 
-    /* 主色 */
-    --primary: #155569;
-
     /* 透明 */
     --alpha-w-40: rgba(255, 255, 255, .4);
     --alpha-w-60: rgba(255, 255, 255, .6);
@@ -89,7 +86,7 @@ section {
 
 /* 漢堡按鈕 */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: transparent;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -179,6 +176,7 @@ section {
     padding: 20px 30px;
     border-radius: 15px;
     text-align: center; /* 文字居中 */
+    gap: 10px;
 }
 
 .menu a {

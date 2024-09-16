@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIZU_NEWS</title>
+
+    <!-- 引入 Bootstrap 的 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 引入 Slick 的 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <link rel="stylesheet" href="./Css/news.css">
+</head>
+
+<body>
+    <!-- 漢堡選單 -->
+    <header class="news_head">
+        <div class="LOGO">
+            <a href="#"><img src="./img/logo/Holi_logo1.jpg" alt="LOGO"></a>
+            <div class="navbar">
+                <button class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav class="navigation">
+                    <ul class="icon">
+                        <!-- <li><a href="#"><img src="https://demo.jumpdesign.tw/img/icon-fb.svg" alt="搜尋按鈕"></a></li> -->
+                        <li><a href="#"><img src="https://demo.jumpdesign.tw/img/icon-ig.svg" alt="IG"></a></li>
+                        <li><a href="#"><img src="https://demo.jumpdesign.tw/img/icon-line.svg" alt="LINE"></a></li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="./index.html">HOME</a></li>
+                        <li><a href="./news.html">NEWS</a></li>
+                        <li><a href="#">PRODUCT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 左側不動右側可滾輪向下 -->
+    <!-- 左側固定圖片，右側內容可滾動 -->
+    <section class="newsSection">
+        <!-- 左側圖片 -->
+        <div class="newsImage">
+            <img class="news-left-pic" src="https://via.placeholder.com/400x500" alt="固定圖片">
+        </div>
+
+        <!-- 右側滾動的消息內容 -->
+        <div class="newsContent">
+            <h2>News.</h2>
+
+            <div class="newsItem">
+                <img src="https://via.placeholder.com/400x300" alt="新聞圖片1">
+                <p>2024/07/31</p>
+                <h3>活動標題: 市集賣場新品</h3>
+                <p>活動內容描述：活動的內容活動的內容活動的內容活動的內容活動的內容活動的內容。</p>
+            </div>
+
+            <div class="newsItem">
+                <img src="https://via.placeholder.com/400x300" alt="新聞圖片2">
+                <p>2024/06/15</p>
+                <h3>活動標題: XX 市集登場</h3>
+                <p>活動內容描述：活動的內容活動的內容活動的內容活動的內容活動的內容活動的內容。</p>
+            </div>
+
+            <div class="newsItem">
+                <img src="https://via.placeholder.com/400x300" alt="新聞圖片3">
+                <p>2024/05/22</p>
+                <h3>活動標題: 新產品發表會</h3>
+                <p>活動內容描述：活動的內容活動的內容活動的內容活動的內容活動的內容活動的內容。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 引入 JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 引入 Slick 的 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./Js/news.js"></script>
+</body>
+
+</html>

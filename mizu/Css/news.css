@@ -1,0 +1,284 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap');
+
+/* utf8一定要在行數1 */
+/* import 一定要在第二行 */
+
+/* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-b-60: rgba(0, 0, 0, 0.6);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加padding */
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto, Ubuntu", "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Serif TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    background-color: #F3ECE4;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-family: "Noto Serif TC", sans-serif;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    color: #444;
+    display: block;
+    /* 預設inline行內元素改為block */
+    text-decoration: none;
+}
+
+p {
+    font-family: "Noto Serif TC", sans-serif;
+}
+
+section {
+    position: relative;
+    display: flex;
+    height: 100vh;
+}
+
+/* Header 設定 */
+.news_head {
+    display: flex;
+    justify-content: space-between;
+    /* LOGO 和漢堡按鈕兩端對齊 */
+    align-items: center;
+    /* 垂直居中 */
+    padding: 0 20px;
+    /* 給 LOGO 和漢堡按鈕兩側增加內邊距 */
+    height: 150px;
+    /* 可以根據需要調整高度 */
+    background-color: transparent;
+    /* 背景色與圖片一致 */
+}
+
+/* LOGO 部分 */
+.LOGO img {
+    height: 100px;
+    /* 控制 LOGO 的高度 */
+    width: auto;
+}
+
+/* 漢堡按鈕 */
+.navbar {
+    background-color: transparent;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 15;
+    padding: 10px;
+}
+
+/* 漢堡按鈕  */
+.hamburger {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+    /* 確保按鈕在菜單上方，防止被隱藏 */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px auto;
+    transition: 0.35s;
+}
+
+/* 三 變換為 X */
+.hamburger.is-active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(11px);
+}
+
+.hamburger.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-11px);
+}
+
+.navigation {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    /* 絕對定位 */
+    top: 0;
+    left: -70%;
+    transform: translateX(-50%);
+    /* 使菜單水平居中 */
+    width: 60%;
+    height: 45vh;
+    /* 占據整個視窗 */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* 半透明黑色背景 */
+    z-index: 10;
+    /* 確保菜單層級低於漢堡按鈕但高於內容 */
+    justify-content: center;
+}
+
+.navigation.show {
+    width: 100px;
+    display: flex;
+    animation: 0.35s ease 0s 1 normal both running show;
+    border-radius: 20px 0 20px 20px;
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+        display: flex;
+        /*動態顯示*/
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+        /*動態消失*/
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-align: center;
+    /* 文字居中 */
+    gap: 10px;
+}
+
+.menu a {
+    color: white;
+    margin: 20px;
+}
+
+.icon {
+    display: flex;
+    order: 1;
+    padding: 15px;
+}
+
+.icon a {
+    width: 35px;
+    margin: 0 5px;
+}
+
+/* 內容區 */
+/* Section 容器設置 */
+.newsSection {
+    display: flex;
+    height: 100vh;
+    /* 占滿整個頁面高度 */
+}
+
+/* 左側圖片部分 */
+.newsImage {
+    width: 40%;
+    position: sticky;
+    top: 0;
+    height: 80vh;
+    overflow: hidden;
+    /* margin: 0 auto;
+}
+
+.newsImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 確保圖片填滿容器 */
+}
+
+/* 右側內容部分 */
+.newsContent {
+    width: 60%;
+    padding: 20px;
+    overflow-y: auto;
+    /* 允許垂直滾動 */
+}
+
+.newsContent h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* 每條新聞的樣式 */
+.newsItem {
+    margin-bottom: 40px;
+}
+
+.newsItem img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.newsItem p {
+    font-size: 14px;
+    color: #888;
+}
+
+.newsItem h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
