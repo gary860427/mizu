@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap');
+
 /* utf8一定要在行數1 */
 /* import 一定要在第二行 */
 
@@ -35,9 +36,9 @@
 body {
     font-family:
         /*西文*/
-        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto, Ubuntu", "Helvetica Neue", Helvetica, Arial,
         /*中文*/
-        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Serif TC", sans-serif;
     font-size: 100%;
     line-height: 1.5;
     background-color: #F3ECE4;
@@ -51,6 +52,7 @@ h4,
 h5,
 h6 {
     font-weight: normal;
+    font-family: "Noto Serif TC", sans-serif;
 }
 
 /* 重置列表 */
@@ -73,6 +75,10 @@ a {
     display: block;
     /* 預設inline行內元素改為block */
     text-decoration: none;
+}
+
+p {
+    font-family: "Noto Serif TC", sans-serif;
 }
 
 section {
@@ -100,7 +106,8 @@ section {
 .leftVideo video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 影片依容器調整比例 */
+    object-fit: cover;
+    /* 影片依容器調整比例 */
 }
 
 /* 右側圖片輪播區域，佔50%寬度，高度自動調整 */
@@ -115,13 +122,16 @@ section {
 .rightPics img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 保持圖片比例 */
-    display: none; /* 初始狀態下，所有圖片隱藏 */
+    object-fit: cover;
+    /* 保持圖片比例 */
+    display: none;
+    /* 初始狀態下，所有圖片隱藏 */
 }
 
 
 .rightPics img.active {
-    display: block; /* 當前圖片顯示 */
+    display: block;
+    /* 當前圖片顯示 */
 }
 
 /* LOGO 位於中央，層級在影片和圖片上方 */
@@ -130,85 +140,254 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10; /* 確保 LOGO 在最上層 */
+    z-index: 10;
+    /* 確保 LOGO 在最上層 */
 }
 
 .centerLogo img {
-    width: 250px; /* 可根據需求調整LOGO尺寸 */
+    width: 250px;
+    /* 可根據需求調整LOGO尺寸 */
     height: auto;
 }
 
 /* 第二區 - NEWS 區域 */
 .newsSection {
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     padding: 50px;
-    background-color: #f8f4eb; /* 預設背景顏色 */
+    background-color: transparent;
+    align-items: center;
 }
 
 /* 左側 NEWS 標題 */
 .newsTitle {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 
 .newsTitle h2 {
     font-size: 48px;
-    font-weight: bold;
-    color: #000; /* 黑色字體 */
+    color: #585858;
+    /* 黑色字體 */
     position: relative;
-    z-index: 2; /* 保證標題在裝飾條上方 */
+    z-index: 2;
+    /* 保證標題在裝飾條上方 */
 }
 
-/* 裝飾條 */
+/* 綠色燈條 */
 .titleDecoration {
     position: absolute;
-    width: 100%;
-    height: 10px;
-    background-color: #6b27b0; /* 底部的紫色條 */
-    bottom: 0;
-    left: 0;
+    width: 250px;
+    background-color: #4C9B4C;
+    bottom: 0px;
+    left: 39%;
+    border-radius: 99px;
+    height: 30px;
     z-index: 1;
-    border-radius: 10px;
-    height: 20px; /* 控制裝飾條的高度 */
 }
 
-.newsTitle h2::after {
+
+/* 紫色裝飾條 */
+.titleDecoration::before {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 80%; /* 綠色條比紫色條短 */
-    height: 20px;
-    background-color: #4CAF50; /* 綠色裝飾條 */
-    border-radius: 10px;
-    z-index: 0; /* 保證在紫色條上方 */
+    width: 250px;
+    height: 30px;
+    background-color: #82208B;
+    /* 紫色條 */
+    bottom: -15px;
+    /* 調整紫色條與綠色條的間距 */
+    left: 10%;
+    border-radius: 99px;
+    z-index: 0;
+    /* 紫色條在最下方 */
 }
 
 /* 右側新聞列表 */
 .newsList {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
 }
 
 .newsItem {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
 /* 日期樣式 */
 .newsDate {
-    font-size: 16px;
-    color: #000; /* 黑色字體 */
+    font-size: 20px;
+    color: #585858;
+    margin-bottom: 30px;
 }
 
 /* 內容文字樣式 */
 .newsContent {
-    font-size: 20px;
-    color: #000; /* 黑色字體 */
-    max-width: 500px; /* 控制內容寬度 */
-    text-align: left; /* 左對齊 */
+    font-size: 22px;
+    color: #585858;
+    max-width: 500px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}
+
+/* 第四區 - Item區 */
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 20px;
+}
+
+.item-title {
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -45%;
+}
+
+.item-title h2 {
+    font-size: 48px;;
+    color: #585858;
+    position: relative;
+    z-index: 10;
+}
+
+.item-title .titleDecoration {
+    position: absolute;
+    left: 5%;
+    top: 55%;
+}
+
+.item-title p {
+    font-size: 1.2em;
+    color: #585858;
+}
+
+.carousel {
+    width: 70%;
+    top: 25%;
+}
+
+.slick-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.slick-prev {
+    left: -45px;
+}
+
+.slick-next {
+    right: -35px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 30px;
+    color: #333;
+}
+
+/* 關於我們區 */
+.about-section {
+    position: relative;
+    height: 600px;
+    background-image: url(../img/background/index_about_back.JPG);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* 將 about 區域設為較低的層級 */
+}
+
+/* 文字區域 */
+.text-container {
+    background-color: rgba(255, 255, 255, 0.6); /* 半透明背景，凸顯文字 */
+    padding: 15px 80px; /* 內邊距，讓文字與邊緣有間距 */
+    z-index: 2; /* 確保文字顯示在背景之上 */
+    text-align: center;
+}
+
+/* 文字樣式 */
+.text-container h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #585858;
+    text-align: center;
+}
+
+/* footer */
+/* Footer 部分 */
+footer {
+    padding:0 20px;
+    position: relative;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    width: 11%;
+}
+
+.up {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+/* Scroll to Top 按鈕樣式 */
+.scroll-to-top {
+    margin-bottom: 10px; /* 與 copyright 之間的距離 */
+    display: block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.scroll-to-top img {
+    width: 100%; /* 圖片寬度全占 */
+    height: auto; /* 高度自適應 */
+}
+
+/* 調整按鈕懸停效果 */
+.scroll-to-top:hover img {
+    opacity: 0.8; /* 懸停時透明度變化 */
+}
+
+/* Copyright 樣式 */
+.footer-copyright {
+    font-size: 14px;
+    color: #585858;
 }
 
