@@ -84,6 +84,15 @@ section {
     height: 100vh;
 }
 
+/* 禁止整個頁面的滾動 */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* 禁止全局滾動 */
+}
+
 /* Header 設定 */
 .news_head {
     display: flex;
@@ -228,8 +237,7 @@ section {
 /* Section 容器設置 */
 .newsSection {
     display: flex;
-    height: 100vh;
-    /* 占滿整個頁面高度 */
+    height: calc(100vh - 100px);
 }
 
 /* 左側圖片部分 */
@@ -237,40 +245,61 @@ section {
     width: 40%;
     position: sticky;
     top: 0;
-    height: 80vh;
+    height: calc(100vh - 200px); /* 扣除 header 和 footer 的高度 */
     overflow: hidden;
-    /* margin: 0 auto;
+    margin: 0 auto;
 }
 
 .newsImage img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: auto;
     object-fit: cover;
-    /* 確保圖片填滿容器 */
+    margin: auto;
 }
 
 /* 右側內容部分 */
 .newsContent {
     width: 60%;
-    padding: 20px;
+    height: calc(100vh - 200px); /* 扣除 header 和 footer 的高度 */
     overflow-y: auto;
     /* 允許垂直滾動 */
 }
 
-.newsContent h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
+.newsContent::-webkit-scrollbar {
+    display: none; 
 }
+
+.newsContent h2 {
+    font-size: 48px;
+    margin: 0 0 20px 22.75%;
+    position: relative; /* 讓 h2 成為參考點 */
+    z-index: 1;
+}
+
+/* 裝飾條 */
+.newsContent h2::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 20px;
+    background-color: #888888;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 99px;
+    z-index: -1;
+
+}
+
 
 /* 每條新聞的樣式 */
 .newsItem {
-    margin-bottom: 40px;
+    margin: 0 23% 50px;
 }
 
 .newsItem img {
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .newsItem p {
@@ -281,4 +310,35 @@ section {
 .newsItem h3 {
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+/* Footer 部分 */
+footer {
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    width: 11%;
+}
+
+.up {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+/* Copyright 樣式 */
+.footer-copyright {
+    font-size: 14px;
+    color: #585858;
 }
