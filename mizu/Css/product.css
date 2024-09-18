@@ -234,6 +234,7 @@ section {
     width: 100%;
     flex-direction: column;
     height: 100%;
+    min-height: 1200px;
 }
 
 /* 按鈕容器 */
@@ -451,7 +452,7 @@ html {
     bottom: 0;
     left: 0;
     width: 100%; /* 占滿頁面寬度 */
-    height: 125%; /* 根據需要調整背景高度 */
+    height: 121%; /* 根據需要調整背景高度 */
     z-index: -2; /* 保證它位於其他內容後面 */
     background-color: #F3ECE4; /* 背景色，與你的主題保持一致 */
 }
@@ -484,7 +485,7 @@ html {
 
 .fleck-demo[data-theme="pink"] {
     --fleck-seed: 123456;
-    --fleck-count: 600;
+    --fleck-count: 800;
     --fleck-size-base: 3px;
     --fleck-color-1: #4C9B4C;
     --fleck-color-2: #82208B;

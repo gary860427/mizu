@@ -26,7 +26,19 @@ function changeImage() {
 // 每3秒切換一次圖片
 setInterval(changeImage, 3000);
 
-// 第三區
+// 第三區輪播效果
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.carousel-slider div');
+const totalSlides = slides.length;
+
+function showNextSlide() {
+    currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+    const offset = -currentSlideIndex * 100; // 計算位移百分比
+    document.querySelector('.carousel-slider').style.transform = `translateX(${offset}%)`;
+}
+
+// 每2秒自動切換圖片
+setInterval(showNextSlide, 2000);
 
 
 

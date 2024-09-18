@@ -348,6 +348,115 @@ section {
 }
 
 /* 第三區視差區域設置 */
+/* 通用樣式 */
+.image-section {
+    display: flex;
+    width: 100%;
+    padding: 0 50px;
+    text-align: center;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 225px;
+}
+
+.color-block {
+    background-color: #c2c2c2;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60%;
+    height: 400px;
+    z-index: -1;
+}
+
+.vector1 {
+    width: 43%;
+    position: absolute;
+    z-index: -1;
+    left: -8%;
+    top: -19%; 
+}
+
+.image-frame-1 {
+    padding: 0 0 0 80px;
+}
+
+.image-frame-1 img {
+    max-width: 75%;
+    height: auto;
+}
+
+.caption {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: #585858;
+    padding: 0 0 0 80px;
+    display: flex;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.vector2 {
+    width: 15%;
+    position: absolute;
+    z-index: -1;
+    left: 49%;
+    top: 47%;
+}
+
+.image-frame-2 {
+    width: 30%;
+    margin: 0 0 0 60%;
+    position: absolute;
+    top: 30%;
+}
+
+.image-frame-2 img {
+    max-width: 85%;
+    height: auto;
+}
+
+.vector3 {
+    width: 35%;
+    position: absolute;
+    z-index: -1;
+    left: 70%;
+    top: 80%;
+}
+
+/* 輪播區樣式 */
+.carousel-section {
+    width: 30%;
+    overflow: hidden;
+    position: relative;
+    height: 560px;
+    right: -15%;
+    margin-top: 20px;
+}
+
+.carousel-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slider div {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-slider img {
+    width: 100%;
+    height: auto;
+}
+
+.vector4 {
+    width: 40%;
+    position: absolute;
+    z-index: -1;
+    left: -13%;
+    top: 90%;
+}
 
 
 /* 第四區 - Item區 */
@@ -525,7 +634,7 @@ html {
     bottom: 0;
     left: 0;
     width: 100%; /* 占滿頁面寬度 */
-    height: 125%; /* 根據需要調整背景高度 */
+    height: 110%; /* 根據需要調整背景高度 */
     z-index: -2; /* 保證它位於其他內容後面 */
     background-color: #F3ECE4; /* 背景色，與你的主題保持一致 */
 }
