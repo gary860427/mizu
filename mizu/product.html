@@ -17,10 +17,18 @@
 </head>
 
 <body>
+    <!-- 背景 -->
+    <div class="wrapper">
+        <div class="fleck-demos stack">
+            <div class="fleck-demo-wrapper">
+                <div class="fleck-demo center-xy" data-theme="pink"></div>
+            </div>
+        </div>
+    </div>
     <!-- 漢堡選單 -->
     <header class="news_head">
-        <div class="LOGO">
-            <a href="#"><img src="./img/logo/Holi_logo1.jpg" alt="LOGO"></a>
+        <div class="LOGO" id="LG">
+            <a href="./index.html"><img src="./img/logo/Holi_logo1.jpg" alt="LOGO"></a>
             <div class="navbar">
                 <button class="hamburger">
                     <span class="bar"></span>
@@ -45,17 +53,121 @@
     </header>
 
     <!-- 篩選列 -->
-    <section class="filter-section">
+    <section class="filter-section" id="product_filter">
         <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">全部</button>
-            <button class="filter-btn" data-filter="top">上身</button>
-            <button class="filter-btn" data-filter="bottom">下身</button>
-            <button class="filter-btn" data-filter="dress">連身</button>
-            <button class="filter-btn" data-filter="accessories">配件</button>
-            <button class="filter-btn" data-filter="proxy">代購</button>
+            <button class="filter-btn active" data-filter="all" style="font-size: 32px; z-index: 1;">全部</button>
+            <button class="filter-btn" data-filter="top" style="font-size: 32px;">上身</button>
+            <button class="filter-btn" data-filter="bottom" style="font-size: 32px;">下身</button>
+            <button class="filter-btn" data-filter="dress" style="font-size: 32px;">連身</button>
+            <button class="filter-btn" data-filter="accessories" style="font-size: 32px;">配件</button>
+            <button class="filter-btn" data-filter="proxy" style="font-size: 32px;">代購</button>
+        </div>
+        <!-- 商品區域 -->
+        <div class="product-grid">
+            <!-- 商品卡片 -->
+
+            <!-- item-1 -->
+            <div class="product-item bottom">
+                <img src="./img/product/product-1.JPG" alt="上衣">
+                <p>SEVC銀扣平底鞋</p>
+                <span>$1680</span>
+            </div>
+
+            <!-- item-2 -->
+            <div class="product-item top">
+                <img src="./img/product/product-2.JPG" alt="上衣">
+                <p>品牌自製購-周末量販所</p>
+                <span>$980</span>
+            </div>
+
+            <!-- item-3 -->
+            <div class="product-item dress">
+                <img src="./img/product/product-3.JPG" alt="連身">
+                <p>裸紗長版背心</p>
+                <span>$1280</span>
+            </div>
+
+            <!-- item-4 -->
+            <div class="product-item proxy">
+                <img src="proxy1.jpg" alt="代購">
+                <p>日本代購特別商品</p>
+                <span>$2580</span>
+            </div>
+
+            <!-- item-5 -->
+            <div class="product-item proxy">
+                <img src="proxy1.jpg" alt="代購">
+                <p>日本代購特別商品</p>
+                <span>$2580</span>
+            </div>
+
+            <!-- item-6 -->
+            <div class="product-item proxy">
+                <img src="proxy1.jpg" alt="代購">
+                <p>日本代購特別商品</p>
+                <span>$2580</span>
+            </div>
+
+            <!-- item-7 -->
+            <div class="product-item proxy">
+                <img src="proxy1.jpg" alt="代購">
+                <p>日本代購特別商品</p>
+                <span>$2580</span>
+            </div>
+
+            <!-- item-8 -->
+            <div class="product-item proxy">
+                <img src="proxy1.jpg" alt="代購">
+                <p>日本代購特別商品</p>
+                <span>$2580</span>
+            </div>
+
+            <!-- item-9 -->
+            <div class="product-item proxy">
+                <img src="proxy1.jpg" alt="代購">
+                <p>日本代購特別商品</p>
+                <span>$2580</span>
+            </div>
+
+            <!-- item-10 -->
+            <div class="product-item proxy">
+                <img src="proxy1.jpg" alt="代購">
+                <p>日本代購特別商品</p>
+                <span>$2580</span>
+            </div>
+
+            <!-- item-11 -->
+            <div class="product-item proxy">
+                <img src="proxy1.jpg" alt="代購">
+                <p>日本代購特別商品</p>
+                <span>$2580</span>
+            </div>
+
+            <!-- item-12 -->
+            <div class="product-item proxy">
+                <img src="proxy1.jpg" alt="代購">
+                <p>日本代購特別商品</p>
+                <span>$2580</span>
+            </div>
+
+
+
+            <!-- 可以繼續添加其他商品 -->
         </div>
     </section>
+    <!-- 頁尾區 -->
+    <footer>
+        <div class="footer-content">
+            <!-- <img src="./img/logo/Holi_logo1.jpg" alt="Logo" class="footer-logo"> -->
+            <div class="up">
+                <a href="#LG" class="scroll-to-top">
+                    <img src="./img/index-pic/arrow-up-circle.png" alt="向上" class="scroll-icon">
+                </a>
+                <p class="footer-copyright">mizumizu © 2024, All Rights Reserved.</p>
+            </div>
 
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- 引入 Slick 的 JS -->

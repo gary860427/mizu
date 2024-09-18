@@ -297,7 +297,6 @@ section {
     left: 39%;
     border-radius: 99px;
     height: 30px;
-    z-index: 1;
 }
 
 
@@ -313,7 +312,7 @@ section {
     /* 調整紫色條與綠色條的間距 */
     left: 10%;
     border-radius: 99px;
-    z-index: 0;
+    z-index: -1;
     /* 紫色條在最下方 */
 }
 
@@ -347,6 +346,9 @@ section {
     justify-content: center;
     font-weight: 500;
 }
+
+/* 第三區視差區域設置 */
+
 
 /* 第四區 - Item區 */
 .container {
@@ -509,4 +511,59 @@ footer {
 .footer-copyright {
     font-size: 14px;
     color: #585858;
+}
+
+/* 背景 */
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+    position: fixed; /* 固定在頁面底部 */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* 占滿頁面寬度 */
+    height: 125%; /* 根據需要調整背景高度 */
+    z-index: -2; /* 保證它位於其他內容後面 */
+    background-color: #F3ECE4; /* 背景色，與你的主題保持一致 */
+}
+
+.center-xy {
+    display: grid;
+    place-items: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.25rem;
+}
+
+.fleck-demo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-image: paint(fleck);
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+    .fleck-demo {
+        position: relative;
+        overflow: hidden;
+        height: 0;
+        padding-top: 100%;
+    }
+}
+
+.fleck-demo[data-theme="pink"] {
+    --fleck-seed: 123456;
+    --fleck-count: 600;
+    --fleck-size-base: 3px;
+    --fleck-color-1: #4C9B4C;
+    --fleck-color-2: #82208B;
+    --fleck-color-3: #8bcf5d;
+    --fleck-color-4: #ebaeeb;
+
+    --background-color: #F3ECE4;
 }

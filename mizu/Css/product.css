@@ -232,8 +232,8 @@ section {
     margin: 20px 0;
     height: 130px;
     width: 100%;
-    /* flex-direction: row; */
-    align-items: flex-end;
+    flex-direction: column;
+    height: 100%;
 }
 
 /* 按鈕容器 */
@@ -253,7 +253,7 @@ section {
     cursor: pointer;
     padding: 10px 20px;
     position: relative;
-    color: #444;
+    color: #585858;
     outline: none;
 }
 
@@ -261,28 +261,30 @@ section {
 .filter-btn::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 100%;
-    height: 4px;
-    background-color: #4C9B4C; /* 綠色 */
+    bottom: 10px;
+    left: 65%;
+    width: 75%;
+    height: 10px;
+    background-color: #82208B; /* 綠色 */
     border-radius: 10px;
-    transform: translateX(-50%) scaleX(0);
+    transform: translateX(-100%) scaleX(0);
     transition: transform 0.3s ease;
+    z-index: -2;
 }
 
 /* 紫色第二層條紋 */
 .filter-btn::after {
     content: '';
     position: absolute;
-    bottom: 4px;
-    left: 50%;
-    width: 100%;
-    height: 4px;
-    background-color: #82208B; /* 紫色 */
+    bottom: 15px;
+    left: 58%;
+    width: 75%;
+    height: 10px;
+    background-color: #4C9B4C; /* 紫色 */
     border-radius: 10px;
-    transform: translateX(-50%) scaleX(0);
+    transform: translateX(-100%) scaleX(0);
     transition: transform 0.3s ease;
+    z-index: -1;
 }
 
 /* Hover 狀態下顯示底部條紋 */
@@ -299,6 +301,195 @@ section {
 
 /* Active 樣式：強調文字顏色 */
 .filter-btn.active {
-    color: #000;
-    font-weight: bold;
+    color: #585858;
+    font-weight: 600;
+}
+
+/* 商品區 */
+/* 商品區域的 grid 設置 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 自動調整列數 */
+    gap: 20px; /* 每個商品卡片之間的間距 */
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+/* 商品卡片樣式 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 75px;
+    padding: 0 4% 10px;
+    justify-items: center;
+}
+
+.product-item {
+    width: 350px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-height: 300px;
+}
+
+.product-item p {
+    font-size: 18px;
+    color: #333;
+    /* margin: 10px 0 5px; */
+    margin-bottom: 0;
+}
+
+.product-item span {
+    font-size: 16px;
+    color: #666;
+}
+
+/* 商品卡片 hover 效果 */
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 隱藏商品時 */
+.product-item.hidden {
+    display: none;
+}
+
+/* 當螢幕較小時自動調整列數 */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 中等螢幕每列顯示 2 個商品 */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr); /* 小螢幕每列顯示 1 個商品 */
+    }
+}
+
+/* Footer 部分 */
+footer {
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.footer-logo {
+    width: 11%;
+}
+
+.up {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+/* Scroll to Top 按鈕樣式 */
+.scroll-to-top {
+    margin-bottom: 10px;
+    /* 與 copyright 之間的距離 */
+    display: block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.scroll-to-top img {
+    width: 100%;
+    /* 圖片寬度全占 */
+    height: auto;
+    /* 高度自適應 */
+}
+
+/* 調整按鈕懸停效果 */
+.scroll-to-top:hover img {
+    opacity: 0.8;
+    /* 懸停時透明度變化 */
+}
+
+/* Copyright 樣式 */
+.footer-copyright {
+    font-size: 14px;
+    color: #585858;
+}
+
+/* 背景 */
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+    position: fixed; /* 固定在頁面底部 */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* 占滿頁面寬度 */
+    height: 125%; /* 根據需要調整背景高度 */
+    z-index: -2; /* 保證它位於其他內容後面 */
+    background-color: #F3ECE4; /* 背景色，與你的主題保持一致 */
+}
+
+.center-xy {
+    display: grid;
+    place-items: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.25rem;
+}
+
+.fleck-demo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-image: paint(fleck);
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+    .fleck-demo {
+        position: relative;
+        overflow: hidden;
+        height: 0;
+        padding-top: 100%;
+    }
+}
+
+.fleck-demo[data-theme="pink"] {
+    --fleck-seed: 123456;
+    --fleck-count: 600;
+    --fleck-size-base: 3px;
+    --fleck-color-1: #4C9B4C;
+    --fleck-color-2: #82208B;
+    --fleck-color-3: #8bcf5d;
+    --fleck-color-4: #ebaeeb;
+
+    --background-color: #F3ECE4;
 }
