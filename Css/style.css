@@ -39,6 +39,7 @@ body {
     font-size: 100%;
     line-height: 1.5;
     background-color: #F3ECE4;
+    overflow-x: hidden;
 }
 
 /* 重置標題 */
