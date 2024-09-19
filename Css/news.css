@@ -255,7 +255,7 @@ html, body {
     height: auto;
     object-fit: cover;
     margin: auto;
-    border: solid 0.5px #585858; 
+    border: solid 0.5px rgb(88, 88, 88, 0.2); 
 }
 
 /* 右側內容部分 */
