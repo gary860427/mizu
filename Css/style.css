@@ -414,11 +414,11 @@ section {
     width: 30%;
     margin: 0 0 0 60%;
     position: absolute;
-    top: 30%;
+    top: 35%;
 }
 
 .image-frame-2 img {
-    max-width: 85%;
+    max-width: 65%;
     height: auto;
 }
 
@@ -705,7 +705,7 @@ html {
         position: absolute;
         z-index: -1;
         left: 72%;
-        top: 75%;
+        top: 65%;
     }
 
     .vector4 {
