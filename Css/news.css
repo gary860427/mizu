@@ -138,7 +138,7 @@ html, body {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #ffffff;
+    background-color: #d7d7d7;
     margin: 5px auto;
     transition: 0.35s;
 }
@@ -294,7 +294,7 @@ html, body {
 
 /* 每條新聞的樣式 */
 .newsItem {
-    margin: 0 23% 100px;
+    margin: 0 23% 135px;
 }
 
 .newsItem img {
