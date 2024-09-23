@@ -100,7 +100,8 @@ section {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    z-index: 20; /* 確保按鈕在菜單上方，防止被隱藏 */
+    z-index: 20;
+    /* 確保按鈕在菜單上方，防止被隱藏 */
 }
 
 .bar {
@@ -129,14 +130,19 @@ section {
     display: none;
     flex-direction: column;
     align-items: center;
-    position: absolute; /* 絕對定位 */
+    position: absolute;
+    /* 絕對定位 */
     top: 0;
     left: -70%;
-    transform: translateX(-50%); /* 使菜單水平居中 */
+    transform: translateX(-50%);
+    /* 使菜單水平居中 */
     width: 60%;
-    height: 45vh; /* 占據整個視窗 */
-    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
-    z-index: 10; /* 確保菜單層級低於漢堡按鈕但高於內容 */
+    height: 45vh;
+    /* 占據整個視窗 */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* 半透明黑色背景 */
+    z-index: 10;
+    /* 確保菜單層級低於漢堡按鈕但高於內容 */
     justify-content: center;
 }
 
@@ -176,7 +182,8 @@ section {
     flex-direction: column;
     padding: 20px 30px;
     border-radius: 15px;
-    text-align: center; /* 文字居中 */
+    text-align: center;
+    /* 文字居中 */
     gap: 10px;
 }
 
@@ -347,7 +354,123 @@ section {
     text-align: left;
     display: flex;
     justify-content: center;
-    font-weight: 700;;
+    font-weight: 700;
+}
+
+@media (max-width:768px) {
+    .newsSection {
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .newsTitle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 50%;
+        padding-right: 135px;
+    }
+
+    .newsList {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 綠色燈條 */
+    .titleDecoration {
+        position: absolute;
+        width: 250px;
+        background-color: #4C9B4C;
+        bottom: 0px;
+        left: 8%;
+        border-radius: 99px;
+        height: 30px;
+    }
+
+
+    /* 紫色裝飾條 */
+    .titleDecoration::before {
+        content: "";
+        position: absolute;
+        width: 250px;
+        height: 30px;
+        background-color: #82208B;
+        /* 紫色條 */
+        bottom: -15px;
+        /* 調整紫色條與綠色條的間距 */
+        left: 10%;
+        border-radius: 99px;
+        z-index: -1;
+        /* 紫色條在最下方 */
+    }
+}
+
+@media (max-width:390px) {
+
+    .newsSection {
+        margin: 0 auto;
+        display: flex;
+        padding: 10px;
+    }
+
+    .newsTitle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 50%;
+        padding-right: 35px;
+    }
+
+    .newsList {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* 綠色燈條 */
+    .titleDecoration {
+        position: absolute;
+        width: 150px;
+        background-color: #4C9B4C;
+        bottom: 0px;
+        left: 0%;
+        border-radius: 99px;
+        height: 30px;
+    }
+
+
+    /* 紫色裝飾條 */
+    .titleDecoration::before {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 30px;
+        background-color: #82208B;
+        bottom: -15px;
+        left: 10%;
+        border-radius: 99px;
+        z-index: -1;
+    }
+
+    .newsDate {
+        font-size: 20px;
+        color: #585858;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    /* 內容文字樣式 */
+    .newsContent {
+        font-size: 18px;
+        color: #585858;
+        max-width: 500px;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+    }
 }
 
 /* 第三區視差區域設置 */
@@ -379,7 +502,7 @@ section {
     position: absolute;
     z-index: -1;
     left: -20%;
-    top: -19%; 
+    top: -19%;
 }
 
 .image-frame-1 {
@@ -463,6 +586,86 @@ section {
     top: 90%;
 }
 
+@media (max-width:768px) {
+    .image-frame-1 {
+        padding: 0 0 0 0px;
+    }
+
+    .caption {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 1.5rem;
+        margin-top: 15px;
+        color: #585858;
+        padding: 0 0 0 0px;
+        display: flex;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+    }
+    
+    .image-frame-2 {
+        width: 35%;
+        margin: 0 0 0 59%;
+        position: absolute;
+        top: 33%;
+    }
+
+    .carousel-section {
+        width: 35%;
+        overflow: hidden;
+        position: relative;
+        height: 580px;
+        right: -8%;
+        margin-top: 150px;
+    }
+
+    .carousel-slider img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+}
+
+@media (max-width:390px) {
+    .image-frame-1 {
+        padding: 0 0 0 0px;
+    }
+
+    .caption {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 1.3rem;
+        margin-top: 15px;
+        color: #585858;
+        padding: 0 0 0 0px;
+        display: flex;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+    
+    .image-frame-2 {
+        width: 40%;
+        margin: 0px 0 0 55%;
+        position: absolute;
+        top: 25%;
+    }
+
+    .carousel-section {
+        width: 65%;
+        overflow: hidden;
+        position: relative;
+        height: 580px;
+        right: 8%;
+        margin-top: 120px;
+    }
+
+    .carousel-slider img {
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+    }
+
+
+}
 
 /* 第四區 - Item區 */
 .container {
@@ -525,6 +728,14 @@ section {
     top: 25%;
     transform: translateY(-50%);
     z-index: 1;
+}
+
+@media (min-width:1920px) {
+
+    .slick-prev,
+    .slick-next {
+        top: 22%;
+    }
 }
 
 .slick-prev {
@@ -636,15 +847,36 @@ html {
 }
 
 .wrapper {
-    position: fixed; /* 固定在頁面底部 */
+    position: fixed;
+    /* 固定在頁面底部 */
     bottom: 0;
     left: 0;
-    width: 100%; /* 占滿頁面寬度 */
-    height: 95%; /* 根據需要調整背景高度 */
-    z-index: -2; /* 保證它位於其他內容後面 */
-    background-color: #F3ECE4; /* 背景色，與你的主題保持一致 */
+    width: 100%;
+    /* 占滿頁面寬度 */
+    height: 95%;
+    /* 根據需要調整背景高度 */
+    z-index: -2;
+    /* 保證它位於其他內容後面 */
+    background-color: #F3ECE4;
+    /* 背景色，與你的主題保持一致 */
 }
 
+@media (max-width:390px) {
+    .wrapper {
+        position: fixed;
+        /* 固定在頁面底部 */
+        bottom: 0;
+        left: 0;
+        width: 200%;
+        /* 占滿頁面寬度 */
+        height: 95%;
+        /* 根據需要調整背景高度 */
+        z-index: -2;
+        /* 保證它位於其他內容後面 */
+        background-color: #F3ECE4;
+        /* 背景色，與你的主題保持一致 */
+    }
+}
 .center-xy {
     display: grid;
     place-items: center;
@@ -689,7 +921,7 @@ html {
         position: absolute;
         z-index: -1;
         left: -20%;
-        top: -19%; 
+        top: -19%;
     }
 
     .vector2 {
