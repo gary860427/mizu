@@ -601,10 +601,10 @@ section {
         font-weight: 700;
         letter-spacing: 0.05em;
     }
-    
+
     .image-frame-2 {
         width: 35%;
-        margin: 0 0 0 59%;
+        margin: 0 0 0 65%;
         position: absolute;
         top: 33%;
     }
@@ -641,7 +641,7 @@ section {
         font-weight: 600;
         letter-spacing: 0.05em;
     }
-    
+
     .image-frame-2 {
         width: 40%;
         margin: 0px 0 0 55%;
@@ -663,8 +663,6 @@ section {
         height: 270px;
         object-fit: cover;
     }
-
-
 }
 
 /* 第四區 - Item區 */
@@ -688,7 +686,6 @@ section {
 
 .item-title h2 {
     font-size: 48px;
-    ;
     color: #585858;
     position: relative;
     z-index: 10;
@@ -752,6 +749,93 @@ section {
     color: #333;
 }
 
+@media (max-width:768px) {
+    .item-title .titleDecoration {
+        position: absolute;
+        left: 10%;
+        top: 23%;
+    }
+
+    .item-text {
+        width: 315px;
+    }
+
+    .item-title h2 {
+        font-size: 48px;
+        color: #585858;
+        position: relative;
+        z-index: 10;
+        top: -23px;
+    }
+
+    .item-title p {
+        font-size: 1.4em;
+        color: #585858;
+        margin-top: 0px;
+        font-weight: 600;
+    }
+
+    .slick-prev,
+    .slick-next {
+        font-size: 0;
+        border: none;
+        background-color: transparent;
+        color: #000;
+        top: 13%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width:390px) {
+    .item-title .titleDecoration {
+        position: absolute;
+        left: 17%;
+        top: 23%;
+    }
+
+    .item-text {
+        width: 315px;
+    }
+
+    .item-title h2 {
+        font-size: 48px;
+        color: #585858;
+        position: relative;
+        z-index: 10;
+        top: -23px;
+    }
+
+    .item-title p {
+        font-size: 1.4em;
+        color: #585858;
+        margin-top: 0px;
+        font-weight: 600;
+    }
+
+    .slick-prev,
+    .slick-next {
+        font-size: 0;
+        border: none;
+        background-color: transparent;
+        color: #000;
+        top: 7%;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .carousel {
+        width: 70%;
+        top: 20%;
+        position: relative;
+        right: 15%;
+    }
+
+}
+
 /* 關於我們區 */
 .about-section {
     position: relative;
@@ -762,7 +846,21 @@ section {
     align-items: center;
     justify-content: center;
     z-index: 1;
-    /* 將 about 區域設為較低的層級 */
+
+}
+
+@media (max-width:390px) {
+    .about-section {
+        position: relative;
+        height: 600px;
+        background-image: url(../img/background/index_about_back.JPG);
+        background-size: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
 }
 
 /* 文字區域 */
@@ -877,6 +975,7 @@ html {
         /* 背景色，與你的主題保持一致 */
     }
 }
+
 .center-xy {
     display: grid;
     place-items: center;
